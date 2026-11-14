@@ -269,6 +269,10 @@ in
         See <https://grafana.com/docs/alloy/latest/set-up/migrate/> or <https://docs.fluentbit.io/manual/data-pipeline/outputs/loki>.
       ''
     )
+    (mkRemovedOptionModule [
+      "services"
+      "haste-server"
+    ] "The `services.haste-server` module has been removed because the upstream project was deleted.")
     (mkRemovedOptionModule [ "services" "homeassistant-satellite" ]
       "The `services.homeassistant-satellite` module has been replaced by `services.wyoming-satellite`."
     )
@@ -607,6 +611,9 @@ in
     (mkRemovedOptionModule [ "services" "scx" ] "Please migrate to services.scx-loader instead.")
     (mkRemovedOptionModule [ "services" "nixops-dns" ] ''
       services.nixops-dns has been removed together with pkgs.nixops-dns.
+    '')
+    (mkRemovedOptionModule [ "services" "sharkey" ] ''
+      services.sharkey has been removed together with pkgs.sharkey.
     '')
     # Do NOT add any option renames here, see top of the file
   ];
