@@ -19502,8 +19502,9 @@
   mio = {
     name = "Mio";
     email = "mio@mio19.uk";
-    github = "mio-19";
+    github = "mio-aotearoa";
     githubId = 57285379;
+    matrix = "@mio:chat.mio19.uk";
   };
   mir06 = {
     email = "armin.leuprecht@uni-graz.at";
