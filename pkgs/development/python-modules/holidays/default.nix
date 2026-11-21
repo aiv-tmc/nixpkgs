@@ -16,14 +16,14 @@
 
 buildPythonPackage (finalAttrs: {
   pname = "holidays";
-  version = "0.107";
+  version = "0.109";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "vacanza";
     repo = "holidays";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-DPp8gejmRsOYhIT0BZRrYsFHEQGpyWbH+K6BpWEecTE=";
+    hash = "sha256-MN7K2vvq4cuE04XVVwCJ0evQhlQFOdaephboKzFSmVI=";
   };
 
   build-system = [

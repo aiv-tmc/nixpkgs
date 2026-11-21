@@ -1308,8 +1308,6 @@ let
 
         minisat = callPackage ../development/ocaml-modules/minisat { };
 
-        minttea = callPackage ../development/ocaml-modules/minttea { };
-
         miou = callPackage ../development/ocaml-modules/miou { };
 
         mirage = callPackage ../development/ocaml-modules/mirage { };
@@ -1429,8 +1427,6 @@ let
 
         mparser = callPackage ../development/ocaml-modules/mparser { };
 
-        mparser-pcre = callPackage ../development/ocaml-modules/mparser/pcre.nix { };
-
         mparser-re = callPackage ../development/ocaml-modules/mparser/re.nix { };
 
         msgpck = callPackage ../development/ocaml-modules/msgpck { };
@@ -1520,8 +1516,6 @@ let
         ocaml-monadic = callPackage ../development/ocaml-modules/ocaml-monadic { };
 
         ocaml_oasis = callPackage ../development/tools/ocaml/oasis { };
-
-        ocaml_pcre = callPackage ../development/ocaml-modules/pcre { };
 
         ocaml-print-intf = callPackage ../development/ocaml-modules/ocaml-print-intf { };
 
@@ -2007,8 +2001,6 @@ let
 
         rio = callPackage ../development/ocaml-modules/rio { };
 
-        riot = callPackage ../development/ocaml-modules/riot { };
-
         rock = callPackage ../development/ocaml-modules/rock { };
 
         rope = callPackage ../development/ocaml-modules/rope { };
@@ -2180,6 +2172,8 @@ let
         theora = callPackage ../development/ocaml-modules/theora { };
 
         thread-table = callPackage ../development/ocaml-modules/thread-table { };
+
+        thumper = callPackage ../development/ocaml-modules/thumper { };
 
         timed = callPackage ../development/ocaml-modules/timed { };
 

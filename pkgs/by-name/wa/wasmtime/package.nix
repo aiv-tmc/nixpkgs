@@ -19,19 +19,19 @@
 let
   sources = {
     lts-36 = {
-      version = "36.0.19";
-      hash = "sha256-zp/BEh1uWaDEGeyqZUZ4PyNGzMDx1hUruMS499yEJA8=";
-      cargoHash = "sha256-h5qEnyhIDxZIbvuiQ/kKZvxcRwynHm18X2jQcY/ChgE=";
+      version = "36.0.20";
+      hash = "sha256-KDqK5ri0vazHXDPyXLsNpenpRAIc/T9PQ0h+ikCIFuw=";
+      cargoHash = "sha256-V9ZZdO9piR2Cn5MjND0N78G+dPQhiIGxFl9lVAtTT50=";
     };
     lts-48 = {
-      version = "48.0.6";
-      hash = "sha256-UysbVNsE9OVYF3e2+JVIedrKEn34NprLL1S8IUuWgF8=";
-      cargoHash = "sha256-W40zAZKKKEIOZaSDq8jgv2dz3LVHS0+2l2Hwt/zsMo0=";
+      version = "48.0.10";
+      hash = "sha256-Pub0pqEMxmIxED/QEyz8mvyqTR7e0r40TnkZLETn8X0=";
+      cargoHash = "sha256-wLU/Y2rrOGW3pucBlhgShc1/pkN1Pm9L1u7x2alFUNE=";
     };
     main = {
-      version = "50.0.0";
-      hash = "sha256-s0DWWCZLEdKf2joTn+QghgfWkJ6Vy4oCxgdB/0/QQlM=";
-      cargoHash = "sha256-lRH/UVGykOT0rwMQ2S/MpEUMVmIa172NWNKzTPdejLo=";
+      version = "51.0.0";
+      hash = "sha256-hROwfTF1d8GqrTBiyzC6CZjGf4T2GlEAV8r7LJgXzlg=";
+      cargoHash = "sha256-58vWC7dGupYs+RUBD6dYxIIuki1CHkNm4t65lu2EC18=";
     };
   };
   source = sources.${variant};

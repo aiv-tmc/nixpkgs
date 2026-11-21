@@ -10,6 +10,7 @@
   bun,
   writableTmpDirAsHomeHook,
 
+  aws-lc,
   glib,
   glib-networking,
   gst_all_1,
@@ -23,13 +24,13 @@ rustPlatform.buildRustPackage (finalAttrs: {
   __structuredAttrs = true;
 
   pname = "iloader";
-  version = "2.4.1";
+  version = "2.4.2";
 
   src = fetchFromGitHub {
     owner = "nab138";
     repo = "iloader";
     rev = "v${finalAttrs.version}";
-    sha256 = "sha256-AJMzQJcLEdfQic6chV2CwNzCzSfnGJ1NWzEef+Y8nn8=";
+    sha256 = "sha256-DGVkq/XEfHYqNtrn/oc4nGQA9Z4dk1iz7hF4EaHxfSo=";
   };
 
   nodeModules = stdenv.mkDerivation {
@@ -72,7 +73,7 @@ rustPlatform.buildRustPackage (finalAttrs: {
 
   cargoRoot = "src-tauri";
   buildAndTestSubdir = "src-tauri";
-  cargoHash = "sha256-Pv9V4aAU+QoCjJZSNpokDn+xt1uzQE6JtxH41y7vNQc=";
+  cargoHash = "sha256-HcJzF7YNcbfXzbPAVJmFgAiEQJkueGf++ExcH6KnwQU=";
 
   doCheck = false;
 
@@ -93,7 +94,10 @@ rustPlatform.buildRustPackage (finalAttrs: {
   ++ lib.optionals stdenv.hostPlatform.isLinux [ wrapGAppsHook3 ]
   ++ lib.optionals stdenv.hostPlatform.isDarwin [ makeWrapper ];
 
-  buildInputs = lib.optionals stdenv.hostPlatform.isLinux [
+  buildInputs = [
+    aws-lc
+  ]
+  ++ lib.optionals stdenv.hostPlatform.isLinux [
     gst_all_1.gstreamer
     gst_all_1.gst-plugins-base
     webkitgtk_4_1

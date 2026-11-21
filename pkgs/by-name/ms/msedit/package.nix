@@ -6,6 +6,8 @@
   versionCheckHook,
   nix-update-script,
   icu76,
+  pkg-config,
+  zstd,
 }:
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "msedit";
@@ -32,8 +34,11 @@ rustPlatform.buildRustPackage (finalAttrs: {
     EDIT_CFG_ICU_RENAMING_VERSION = 76;
   };
 
+  nativeBuildInputs = [ pkg-config ];
+
   buildInputs = [
     icu76
+    zstd
   ];
 
   # https://github.com/microsoft/edit/blob/f8bea2be191d00baa2a4551817541ea3f8c5b03e/src/icu.rs#L834
@@ -69,7 +74,7 @@ rustPlatform.buildRustPackage (finalAttrs: {
     homepage = "https://github.com/microsoft/edit";
     changelog = "https://github.com/microsoft/edit/releases/tag/v${finalAttrs.version}";
     license = lib.licenses.mit;
-    maintainers = [ ];
+    maintainers = with lib.maintainers; [ novalkun ];
     platforms = lib.platforms.all;
   };
 })

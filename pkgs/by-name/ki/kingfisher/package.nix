@@ -17,7 +17,7 @@
 
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "kingfisher";
-  version = "2.16.0";
+  version = "2.19.0";
 
   __structuredAttrs = true;
 
@@ -25,10 +25,10 @@ rustPlatform.buildRustPackage (finalAttrs: {
     owner = "mongodb";
     repo = "kingfisher";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-SWkoeu8HlAKxVYiheLPrzPqs5T1wdVR2xtTtNm8SDzU=";
+    hash = "sha256-QyzE6fj/OwdQ0MUYKGM8hvF4VZK3NIt8kv9V2q5Vlcs=";
   };
 
-  cargoHash = "sha256-BlurVxShWjaVnmT4BJypxMsXMjmqVEyL6T3NtnBJFrU=";
+  cargoHash = "sha256-r4wtCOz2CMpuDeXk64zJjjex3MzjJfDL2XjAUzruFHQ=";
 
   nativeBuildInputs = [
     cmake

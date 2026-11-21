@@ -14,13 +14,13 @@
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "tomato-c";
-  version = "1.2.2";
+  version = "1.3.2";
 
   src = fetchFromGitHub {
     owner = "gabrielzschmitz";
     repo = "Tomato.C";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-by6ed/lZ2XABCMxjWN/iTKIg3cUX5+B/3s2oe3tzo8I=";
+    hash = "sha256-ziPmuwz0cpwrWfD5wESqdrcsU2N7RuwIPXZlarrsFmc=";
   };
 
   nativeBuildInputs = [
@@ -84,7 +84,10 @@ stdenv.mkDerivation (finalAttrs: {
     description = "Terminal-based pomodoro timer written in pure C";
     changelog = "https://github.com/gabrielzschmitz/Tomato.C/blob/v${finalAttrs.version}/CHANGELOG.md";
     license = lib.licenses.gpl3Only;
-    maintainers = with lib.maintainers; [ _3JlOy-PYCCKUi ];
+    maintainers = with lib.maintainers; [
+      _3JlOy-PYCCKUi
+      gabrielzschmitz
+    ];
     mainProgram = "tomato";
     platforms = lib.platforms.unix;
   };

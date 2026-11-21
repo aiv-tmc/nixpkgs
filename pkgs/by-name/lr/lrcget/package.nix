@@ -16,7 +16,9 @@
 
   alsa-lib,
   openssl,
+  sqlite,
   webkitgtk_4_1,
+  zstd,
 
   nix-update-script,
 }:
@@ -121,16 +123,20 @@ rustPlatform.buildRustPackage rec {
     nodejs
     npmHooks.npmConfigHook
     rustPlatform.bindgenHook
+    pkg-config
   ]
   ++ lib.optionals (!stdenv.hostPlatform.isDarwin) [
-    pkg-config
     wrapGAppsHook3
   ]
   ++ lib.optionals stdenv.hostPlatform.isDarwin [
     makeBinaryWrapper
   ];
 
-  buildInputs = lib.optionals (!stdenv.hostPlatform.isDarwin) [
+  buildInputs = [
+    sqlite
+    zstd
+  ]
+  ++ lib.optionals (!stdenv.hostPlatform.isDarwin) [
     alsa-lib
     openssl
     webkitgtk_4_1

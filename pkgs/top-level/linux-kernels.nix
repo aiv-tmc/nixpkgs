@@ -111,7 +111,6 @@ in
           kernelPatches = [
             kernelPatches.bridge_stp_helper
             kernelPatches.request_key_helper
-            kernelPatches.tools_128bit_types
           ];
         };
 
@@ -240,6 +239,8 @@ in
           "KBUILD_OUTPUT=${kernel.dev}/lib/modules/${kernel.modDirVersion}/build"
           "DEPMOD=true"
           "INSTALL_MOD_STRIP=1"
+          # Remove kernel.dev references added by rustc from out-of-tree modules
+          "KRUSTFLAGS=--remap-path-prefix=${kernel.dev}/=/kernel/"
         ];
         # Obsolete aliases (these packages do not depend on the kernel).
         inherit (pkgs) odp-dpdk pktgen; # added 2018-05
@@ -301,6 +302,8 @@ in
           inherit kernel;
         };
 
+        efa = callPackage ../os-specific/linux/efa { };
+
         ethercat = callPackage pkgs.ethercat.kernelModule { };
 
         evdi = callPackage ../os-specific/linux/evdi { };
@@ -316,6 +319,10 @@ in
         gpu-unlock = callPackage ../os-specific/linux/gpu-unlock { };
 
         gtp5g = callPackage ../os-specific/linux/gtp5g { };
+
+        hailo1x = callPackage ../os-specific/linux/hailo1x { };
+
+        hailo8 = callPackage ../os-specific/linux/hailo8 { };
 
         hyperv-daemons = callPackage ../os-specific/linux/hyperv-daemons { };
 
@@ -386,6 +393,7 @@ in
         nvidia_x11_legacy390 = nvidiaPackages.legacy_390;
         nvidia_x11_legacy470 = nvidiaPackages.legacy_470;
         nvidia_x11_legacy535 = nvidiaPackages.legacy_535;
+        nvidia_x11_legacy580 = nvidiaPackages.legacy_580;
         nvidia_x11_production = nvidiaPackages.production;
         nvidia_x11_vulkan_beta = nvidiaPackages.vulkan_beta;
         nvidia_dc = nvidiaPackages.dc;
